@@ -1,0 +1,200 @@
+/* footter */
+.box50{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+}
+.footter ul{
+    list-style: none;
+    padding: 0px ;
+    margin: 0px;
+}
+.footter ul>li>a{
+    text-decoration: none;
+    color: white;
+}
+/* end footter */
+/* banner */
+.img-banner {
+    height: 650px;
+    object-fit: cover; 
+  }
+  /* css banner js */
+/* .banner{
+    width:100%;
+    min-width:300px;  
+    margin-bottom: 20px;
+    text-align:center;
+    position:relative;
+}
+.banner img{
+    width:100%;
+    height:620px;
+}
+.pre, .next{
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    width:auto;
+    padding:16px;
+    color:white;
+    font-weight:bold;
+    font-size:18px;
+    transition:0.6s ease-in-out;
+    border-radius:0 3px 3px 0;
+    border:none;   
+}
+.pre:hover, .next:hover{
+    background-color:rgba(0,0,0,0.8);
+}
+.next{
+    right:0;
+    border-radius:3px 0 0 3px;
+}
+.pre{
+    left:0;
+    border-radius:0 3px 3px 0;
+} */
+/* end css banner js */
+  /* end banner */
+/* phần item hearder */
+.item_dangnhap{
+    text-decoration: none;
+    color: black;
+}
+.item_hearder{
+    list-style: none;
+    padding: 0px ;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+/* end */
+/* tin tức trang chủ */
+.img_tintuc{
+    height: 400px;
+    object-fit: cover;
+}
+.tintuc{
+    text-decoration: none;
+    color: black;
+}
+/* end */
+/* danh mục trang chủ */
+.danhmuc {
+    background-color: #f2f2f2; /* Màu nền của phần danh mục */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+h3 {
+    font-size: 24px; /* Kích thước font chữ */
+    color: #333; /* Màu chữ */
+}
+
+.anhdm {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* đổ bóng */
+    transition: transform 0.3s; 
+}
+
+.anhdm:hover {
+    transform: scale(1.05); 
+}
+
+.anh_dm {
+    height: 250px;
+    object-fit: cover;
+}
+
+.tenanh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s; /* Hiệu ứng xuất hiện */
+}
+
+.tenanh a {
+    text-decoration: none;
+    color: white;
+}
+.anhdm:hover .anh_dm {
+    filter: blur(1px); /* Mờ hình ảnh khi hover */
+}
+.anhdm:hover .tenanh {
+    opacity: 1;
+}
+/* end */
+/* top sp */
+.sanpham {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.tenSP {
+    text-decoration: none; /* Loại bỏ đường link */
+    color: #333; /* Màu chữ tiêu đề */
+}
+
+.giaSP {
+    color: #ff6600; /* Màu chữ giá */
+}
+
+.themSP {
+    background-color: white; 
+    color: black; 
+    border: none;
+    padding: 7px 15px; 
+    margin-right: 5px;
+    border-radius: 5px; 
+    cursor: pointer; /* Con trỏ khi di chuột qua nút */
+}
+.themSP:hover {
+    background-color: #ff6600; 
+}
+
+/* CSS mặc định cho trái tim */
+.heart-icon {
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+}
+
+/* CSS khi trái tim được nhấn */
+.heart-icon.clicked {
+    color: red; /* Màu mới của trái tim khi nhấn */
+    transform: scale(1.2); /* Phóng to trái tim */
+}
+/* end topSP */
+/* Trang danhmucSP */
+.tendm{
+    border-bottom: 1px solid #ff6600; /* Màu chữ nổi bật, ví dụ: màu cam */
+    ;
+}
+.tendm a {
+    text-decoration: none; /* Loại bỏ đường link */
+    color: black; /* Màu chữ nổi bật, ví dụ: màu cam */
+}
