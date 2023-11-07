@@ -16,6 +16,26 @@
     color: white;
 }
 /* end footter */
+/*  timkiem */
+.timkiem {
+    width: 250px; /* Đặt chiều rộng */
+    height: 38px;
+    margin-right: 5px;
+    padding: 10px; /* Đặt khoảng cách bên trong */
+    border: 1px solid #ccc; /* Đặt viền */
+    border-radius: 5px; /* Đặt góc vuông */
+    background-color: #f7f7f7; /* Đặt màu nền */
+    color: #333; /* Đặt màu chữ */
+}
+
+.timkiem:focus {
+    color: #000;
+}
+
+.timkiem:focus {
+    background-color: #fff;
+}
+/* end */
 /* banner */
 .img-banner {
     height: 650px;
@@ -162,16 +182,16 @@ h3 {
     color: #ff6600; /* Màu chữ giá */
 }
 
-.themSP {
+.themSP{
     background-color: white; 
     color: black; 
-    border: none;
+    border: 1px solid black;
     padding: 7px 15px; 
-    margin-right: 5px;
+    margin-right: auto;
     border-radius: 5px; 
     cursor: pointer; /* Con trỏ khi di chuột qua nút */
 }
-.themSP:hover {
+.themSP:hover, .muangay:hover {
     background-color: #ff6600; 
 }
 
@@ -198,3 +218,101 @@ h3 {
     text-decoration: none; /* Loại bỏ đường link */
     color: black; /* Màu chữ nổi bật, ví dụ: màu cam */
 }
+/* Đăng nhập */
+.form_dangnhap, .form_dangky, .form_quenMK{
+    max-width: 600px; 
+    margin: 10px auto; 
+    padding: 20px;
+    border: 1px solid black;
+    background-color: #f7eded ;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) ;
+    border-radius: 5px;
+}
+
+/* Định dạng nút đăng nhập */
+.dangnhap, .dangkyTK, .layMK{
+    margin-top: 5px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.dangnhap:hover, .dangkyTK:hover, .layMK:hover{
+    background-color: #ff6600;
+}
+
+/* Định dạng nhãn (label) */
+.form-label {
+    font-weight: bold;
+}
+
+.dangky, .quenMK{
+    text-decoration: none;
+    color: black;
+}
+.dangky:hover, .quenMK:hover{
+    color: #ff6600;
+}
+/* Chi tiết sản phẩm */
+.anh2{
+    width: 90px;
+    margin: 10px;
+    object-fit: cover;
+}
+.anh1{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.select_chitietSP{ 
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.mausac{
+    background-color: #FF0000;
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    margin:10px 5px; 
+    cursor: pointer; 
+    display: inline-block;
+}
+.muangay{
+    background-color: white; 
+    color: black; 
+    border: 1px solid black;
+    padding: 7px 15px; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+/* Màu nền mặc định cho nút */
+.btn.btn-outline-success {
+    background-color: transparent; 
+}
+
+/* Màu nền khi hover vào nút */
+.btn.btn-outline-success:hover {
+    background-color: #ff6600; 
+}
+/* Thông tin Giao hàng */
+.form_tomtatGH{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.tienhanhDH{
+    background-color: white; 
+    color: black; 
+    border: 1px solid black;
+    padding: 7px 15px; 
+    float: right;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+.tienhanhDH:hover{
+    background-color: #ff6600;
+    color: white
+}
+/* end */

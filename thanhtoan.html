@@ -107,159 +107,61 @@
             </div>
         </section>
     </header>
-    <!-- main -->
+    <!-- end header -->
     <main>
-        <section class="SP1">
-            <div class="container">
-                <div class="row py-2 ">
-                    <div class="tendm">
-                        <a href="#"><strong style="font-size: 30px">Áo Nam</strong></a>
-                    </div>
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
+       <div class="container py-5"><br>
+        <h3>Thông Tin Giao Hàng</h3><hr>
+            <div class="row m-4">
+                <div class="col-8 ">
+                    <form class="form_thongtinGH " action="" method="post">
+                          <input type="text" class="form-control hoten" id="hovaten" placeholder="Họ và tên..."><br>
+                          <input type="text" class="form-control sdt" id="sodienthoai" placeholder="Số điện thoại..."><br>
+                          <input type="text" class="form-control dia_chi" id="diachi" placeholder="Địa chỉ..."><br>
+                          <textarea class="form-control ghichu" id="ghichu" rows="3" placeholder="Ghi chú..."></textarea><br>
+                          <select class="form-select thanhtoan" aria-label="Default select example">
+                            <option selected>Chọn Phương Thức Thanh Toán</option>
+                            <option value="1">Thanh Toán Khi Nhận Hàng (COD)</option>
+                            <option value="2">Thanh Toán Online</option>
+                          </select>  
+                    </form>
                 </div>
-                <div class="row py-2 ">
-                    <div class="tendm">
-                        <a href="#"><strong style="font-size: 30px">Quần Nam</strong></a>
+                <div class="col-4 ">
+                    <div class="row SPthanhtoan">
+                        <div class="col-auto  ">
+                            <img src="img1/ao1.jpg" alt="" width="60px" height="80px">
+                        </div>
+                        <div class="col-auto  ">
+                            <h6>Áo Blazer Fitted</h6>
+                            <input type="number" class="form-control" name="soluong" min="1" value="1">
+                        </div>
+                        <div class="col-auto">
+                            <p>1.000.000đ</p>
+                            <button class="btn btn-outline-success XoaSPthanhtoan" type="submit">Xóa</button>
+                        </div>
+                    </div><hr>
+                    <form class="d-flex" action="" method="post">
+                        <input class="form-control me-2 magiamGia" type="text" placeholder="Mã Giảm Giá">
+                        <button class="btn btn-outline-success SDmagiamGia" type="submit">Dùng</button>
+                    </form><br>
+                    <table class="table ">
+                        <tbody class="table-group-divider">
+                            <tr>
+                              <td>Phí vận chuyển</td>
+                              <td style="text-align: right;">10.000đ</td>
+                            </tr>
+                            <tr>
+                              <td><h5>Tổng Tiền</h5></td>
+                              <td style="text-align: right;"><h4>1.000.000đ</h4></td>
+                            </tr>
+                          </tbody>
+                    </table>
+                    <div class="row d-flex justify-content-center ">
+                        <button class="btn btn-outline-success hoantatDH" type="submit">Hoàn Tất Đơn Hàng</button>
                     </div>
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                </div>
-                <div class="row py-2 ">
-                    <div class="tendm">
-                        <a href="#"><strong style="font-size: 30px">Phụ Kiện</strong></a>
-                    </div>
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 py-3 ">
-                        <div class="sanpham">
-                            <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                            <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                            <p class="giaSP">325,000 VND</p>
-                            <form method="post">
-                                <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                <i class="fas fa-heart heart-icon"></i>
-                            </form>
-                        </div>
-                    </div> 
                 </div>
             </div>
-        </section>
+
+       </div>
     </main>
     <footer>
         <section class="footter bg-black text-white py-4">
@@ -313,7 +215,7 @@
                         <p class="mb-0">Địa chỉ: Số 344 Cầu Giấy, Phường Dịch Vọng, Quận Cầu Giấy, Thành phố Hà Nội</p>
                         <p class="mb-0">Mã số doanh nghiệp: 0108901419 do Sở kế hoạch và đầu tư thành phố Hà Nội cấp ngày 17/09/2019</p>
                         <p class="mb-0">Điện thoại: 0982.022.969</p>
-                        <img src="img1/footter_logo.jpg" alt="" width="">
+                        <img src="img1/footter_logo.png" alt="" width="">
                     </div>
                     <div class="col-md-6 ">
                         <h5>Nhận Tin Khuyến Mãi</h5>
@@ -344,6 +246,6 @@
         </section>
     </footer>
     <!-- end footter -->
-    <script src="main.js"></script> 
+    <!-- <script src="main.js"></script>  -->
 </body>
 </html>
