@@ -358,7 +358,7 @@ h3 {
     padding: 20px;
 }
 
-.form_addsp {
+.form_addsp, .form_add_dm, .form_sua_sp, .form_sua_dm{
     margin: auto;
     padding: 10px;
     max-width: 600px;
@@ -378,4 +378,7 @@ h3 {
 .mausac:hover {
     border: 1px solid #333;
 }
-
+/* hình ảnh sửa sản phẩm */
+.image-container {
+    margin-bottom: 20px;
+}

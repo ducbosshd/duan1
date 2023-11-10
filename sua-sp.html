@@ -59,13 +59,13 @@
         </section>
     </header>
     <main>
-        <section class="addsp">
+        <section class="sua_sp">
             <div class="container p-1">
-               <div class="name_addsp text-center ">
-                    <h3>Thêm Sản Phẩm Mới</h3>
+               <div class="name_sua_sp text-center ">
+                    <h3>Sửa Sản Phẩm</h3>
                </div>
                <div class="form_nd">
-                    <form class="form_addsp" method="post">
+                    <form class="form_sua_sp" method="post">
                         <div class="mb-3">
                         <label for="tensp" class="form-label">Tên Sản Phẩm</label>
                         <input type="text" class="form-control" id="tensp" placeholder="Nhập vào tên sản phẩm...">
@@ -104,16 +104,39 @@
                             <label for="giasp" class="form-label">Giá Tiền</label>
                             <input type="text" class="form-control" id="giasp" placeholder="Nhập giá sản phẩm...">
                         </div>
-                        <div class="mb-3 ">
-                            <label for="hinhanhchinh" class="form-label ">Hình Ảnh Chính</label>
-                            <input type="file" class="form-control" id="hinhanhchinh" name="hinhanhchinh">
-                        </div>
-                        <div class="mb-3 ">
-                            <label for="hinhanhphu" class="form-label ">Hình Ảnh Phụ</label>
-                            <input type="file" multiple class="form-control" id="hinhanhphu" name="hinhanhphu">
-                        </div>
+                        <div class="mb-3">
+                            <label for="hinhanhchinh" class="form-label">Hình Ảnh Chính</label><br>
+                            <div class="image-container">
+                                <img id="hinhanhchinh-preview" src="img1/ao1.jpg" alt="Hình Ảnh Chính" width="100px" style="margin-bottom: 10px;">
+                                <input type="file" class="form-control" id="hinhanhchinh" name="hinhanhchinh">
+                            </div>
+                        </div>            
+                        <div class="mb-3">
+                            <label for="hinhanhphu" class="form-label">Hình Ảnh Phụ</label>
+                            <div class="hinhanhphu">
+                                <div class="image-container">
+                                    <img id="hinhanhphu-preview-1" src="img1/ao2.jpg" alt="Hình Ảnh Phụ" width="100px" style="margin-bottom: 10px;">
+                                    <input type="file" class="form-control hinhanhphu-input" id="hinhanhphu-1" name="hinhanhphu">
+                                    <button type="button" class="btn btn-danger" >Xóa</button>
+                                </div>
+                                <div class="image-container">
+                                    <img id="hinhanhphu-preview-2" src="img1/ao3.jpg" alt="Hình Ảnh Phụ" width="100px" style="margin-bottom: 10px;">
+                                    <input type="file" class="form-control hinhanhphu-input" id="hinhanhphu-2" name="hinhanhphu">
+                                    <button type="button" class="btn btn-danger" >Xóa</button>
+                                </div>
+                                <div class="image-container">
+                                    <img id="hinhanhphu-preview-3" src="img1/ao4.jpg" alt="Hình Ảnh Phụ" width="100px" style="margin-bottom: 10px;">
+                                    <input type="file" class="form-control hinhanhphu-input" id="hinhanhphu-3" name="hinhanhphu">
+                                    <button type="button" class="btn btn-danger" >Xóa</button>
+                                </div>
+                                <div class="image-container">
+                                    <img id="hinhanhphu-preview-4" src="img1/ao5.jpg" alt="Hình Ảnh Phụ" width="100px" style="margin-bottom: 10px;">
+                                    <input type="file" class="form-control hinhanhphu-input" id="hinhanhphu-4" name="hinhanhphu">
+                                    <button type="button" class="btn btn-danger" >Xóa</button>
+                                </div>
+                            </div>
                         <div class="flex-column">
-                            <button type="submit" class="btn btn-primary">Thêm Mới</button>
+                            <button type="submit" class="btn btn-primary">Sửa Sản Phẩm</button>
                             <button type="reset" class="btn btn-secondary">Nhập Lại</button>
                             <a href="admin.html" class="btn btn-primary">Danh Sách</a>
                         </div>
