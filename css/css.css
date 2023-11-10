@@ -316,3 +316,66 @@ h3 {
     color: white
 }
 /* end */
+/* menu admin */
+.navbar-nav .nav-link {
+    color: #000; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu */
+}
+
+.navbar-nav .nav-link:hover {
+    color: white;
+    background-color: #ff6600;
+}
+
+.navbar-nav .nav-link.active {
+    color: white;
+    background-color: #ff6600;
+}
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block;
+}
+/* thêm sp adm */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Hiệu ứng hover cho input và select */
+.form-control:hover,
+.form-select:hover {
+    border-color: #007bff;
+}
+.form_nd {
+    padding: 20px;
+}
+
+.form_addsp {
+    margin: auto;
+    padding: 10px;
+    max-width: 600px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) ;
+    border-radius: 5px;
+}
+
+.mausac {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.mausac:hover {
+    border: 1px solid #333;
+}
+
