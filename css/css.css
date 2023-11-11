@@ -358,7 +358,7 @@ h3 {
     padding: 20px;
 }
 
-.form_addsp, .form_add_dm, .form_sua_sp, .form_sua_dm{
+.form_addsp, .form_add_dm, .form_sua_sp, .form_sua_dm, .form_add_mgg, .form_edit_mgg{
     margin: auto;
     padding: 10px;
     max-width: 600px;
