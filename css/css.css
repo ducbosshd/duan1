@@ -193,6 +193,7 @@ h3 {
 }
 .themSP:hover, .muangay:hover {
     background-color: #ff6600; 
+    color: white;
 }
 
 /* CSS mặc định cho trái tim */
