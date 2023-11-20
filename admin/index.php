@@ -14,7 +14,7 @@
                 include './danhmuc/danhsach.php';
                 break;
             case 'themdm':
-                if(isset($_POST['luu_dm']) && $_POST['luu_dm']){
+                if(isset($_POST['luu_dm'])){
                     if(!empty($_POST['tenloai'])){
                         $tenloai = $_POST['tenloai'];
                         if(!empty($_FILES['hinhanh']['name'])){
@@ -40,7 +40,7 @@
                 include './danhmuc/capnhat.php';
                 break;
             case 'capnhatdm':
-                if(isset($_POST['luu_dm']) && $_POST['luu_dm']){
+                if(isset($_POST['luu_dm']) ){
                     if(!empty($_POST['tenloai'])){
                         $tenloai = $_POST['tenloai'];
                         $id = $_POST['id'];
@@ -80,6 +80,7 @@
                 }
                 $dshh = loadall_hh($kyw, $iddm);
                 $dsdm = loadall_dm();
+                $dstt = loadall_thuoctinh();
                 include './hanghoa/danhsach.php';
                 break;
             case 'themhh':
@@ -169,10 +170,6 @@
                 $dshh = loadall_hh("",0);
                 include './hanghoa/danhsach.php';
                 break;
-            case 'dskh':
-                $nguoidung = loadall_tk();
-                include './taikhoan/dstk.php';
-                break;
             case 'dsha':
                 if(isset($_POST['btnok']) && $_POST['btnok']){
                     $idhh = $_POST['idds'];
@@ -188,7 +185,16 @@
                 break;
         }
     }else{
+        if(isset($_POST['btnok']) && $_POST['btnok']){
+            $kyw = $_POST['kyw'];
+            $iddm = $_POST['iddm'];
+        }else{
+            $kyw = "";
+            $iddm = 0;
+        }
+        $dshh = loadall_hh($kyw, $iddm);
         $dsdm = loadall_dm();
+        $dstt = loadall_thuoctinh();
         include './hanghoa/danhsach.php';
     }
 ?>

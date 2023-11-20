@@ -3,40 +3,37 @@
         extract($dm);
     }
     if(is_file($hinhanh)){
-        $img = "<img src=".$hinhanh." height = '100px'>";
+        $img = "<img src=".$hinhanh." height = '100px' style='padding-bottom: 5px;'>";
     }else{
         $img = '';
     }
 ?>
-<div class="row">
-            <div class="row font_title">
-                <h1>Cập nhật loại hàng hóa</h1>
+<main>
+    <section class="add_dm">
+        <div class="container p-1">
+            <div class="name_add_dm text-center ">
+                <h3>Chỉnh sửa Danh Mục</h3>
             </div>
-            <div class="row frmcontent">
-                <form action="index.php?act=capnhatdm" method="post" enctype="multipart/form-data">
-                    <div class="row mb10 form">
-                       <p> Mã loại</p>
-                        <input type="text" name="maloai" value="<?php if(isset($id) && $id >0) echo $id; ?>"disabled>
+            <div class="form_nd">
+                <form action="index.php?act=capnhatdm" class="form_add_dm" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                    <label for="add_tendm" class="form-label">Tên Danh Mục</label>
+                    <input type="text" class="form-control" id="add_tendm" name="tenloai" value="<?=$ten?>">
                     </div>
-                    <div class="row mb10 form">
-                       <p> Tên loại</p>
-                        <input type="text" name="tenloai" value="<?php if(isset($ten) && $ten != "") echo $ten; ?>">
+                    <div class="mb-3">
+                    <div class="mb-3 ">
+                        <label for="hinhanhdm" class="form-label ">Hình Ảnh Danh Mục</label><br>
+                        <?=$img?>
+                        <input type="file" class="form-control" id="hinhanhdm" name="hinhanh">
                     </div>
-                    <div class="row mb10 form">
-                        <p> Hình ảnh </p>
-                        <?php echo $img; ?>
-                        <input type="file" name="hinhanh">
+                    <div class="flex-column">
+                        <input type="hidden" name="id" value="<?php if(isset($id) && $id >0) echo $id;?>">
+                        <button type="submit" class="btn btn-primary" name="luu_dm">Cập nhật</button>
+                        <button type="reset" class="btn btn-secondary">Nhập Lại</button>
+                        <a href="index.php?act=dsdm" class="btn btn-primary">Danh Sách Danh Mục</a>
                     </div>
-                    <div class="row_flex mb10">
-                        <input type="hidden" name="id" value="<?php if(isset($id) && $id >0) echo $id; ?>">
-                        <input type="submit" name="luu_dm" value="Lưu"><br>
-                        <input type="reset" value="Nhập lại"><br>
-                        <a href="index.php?act=dsdm"><input type="button" value="Danh sách"></a>
-                    </div>
-                    <?php 
-                        if(isset($thongbao) && $thongbao!="") echo $thongbao
-                    ?>
                 </form>
             </div>
         </div>
-    </div>
+    </section>
+</main>
