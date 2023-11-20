@@ -383,4 +383,7 @@ h3 {
 .image-container {
     margin-bottom: 20px;
 }
+.image-chitiet {
+    display: flex;
+}
 /* tìm kiếm adm */
