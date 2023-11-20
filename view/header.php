@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css_bootstrap/bootstrap.min.css">
+    <script src="js_bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/b1ce9c2366.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <section class="logo">
+            <div class="container py-2">
+                <div class="row">
+                    <div class="col-md-2"> 
+                        <img src="img1/logo2.jpg" class="img-fluid " alt="" width=""  >
+                    </div>
+                    <div class="col-md-7">
+                    </div>
+                    <div class="col-md-3 p-0 item_hearder">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-3 ">
+                                        <div class="fs-3" >
+                                            <i class="fa-regular fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 fs-6 ">
+                                        <a href="dangnhap.html" class="item_dangnhap">Xin Chào <br>
+                                            <strong>ĐăngNhập</strong>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="#" class="position-relative">
+                                            <span class="fs-3 item_dangnhap"><i class="fa-regular fa-heart"></i></span>
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            0
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" class="position-relative">
+                                        <span class="fs-3 item_dangnhap"><i class="fa-solid fa-cart-shopping"></i></span>
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                        </span>
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="menu">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <!-- nút toggle menu-->
+                        <a class="navbar-brand d-none" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu_nav"
+                         aria-controls="menu_nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!-- kết thúc nút toggle menu -->
+                      <div class="collapse navbar-collapse" id="menu_nav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Trang Chủ</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="danhmucSP.html">Sản Phẩm</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" 
+                            aria-expanded="false">
+                                Danh Mục
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">Áo</a></li>
+                              <li><a class="dropdown-item" href="#">Quần</a></li>
+                              <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Tin Tức</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Liên Hệ</a>
+                          </li>
+                        </ul>
+                        <form class="d-flex align-items-center" action="" method="post">
+                            <input class="timkiem" type="search" placeholder="Tìm Kiếm..." aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+        </section>
+    </header>
+    <!-- end header -->
