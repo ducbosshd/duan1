@@ -63,6 +63,8 @@
         $hh = pdo_query($sql);
         return $hh;
     }
+
+    //load hình ảnh hàng hóa
     function load_hinhanh_dd($id){
         $sql = "select hinhanh_url from hinhanh where vitri = 0 and id_hanghoa =".$id;
         $hinhanh = pdo_query_one($sql);

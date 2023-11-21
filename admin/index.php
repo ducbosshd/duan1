@@ -128,8 +128,12 @@
                 break;
             case 'suahh':
                 if(isset($_GET['id']) && $_GET['id']){
-                    $hh = loadone_hh($_GET['id']);
+                    $id =$_GET['id'];
+                    $hh = loadone_hh($id);
+                    $ha_dd = load_hinhanh_dd($id); //hình ảnh đại diện
+                    $dsha = load_hinhanh($id); //hình ảnh thêm
                 }
+                $dstt = loadall_thuoctinh();
                 $dsdm = loadall_dm();
                 include './hanghoa/capnhat.php';
                 break;
