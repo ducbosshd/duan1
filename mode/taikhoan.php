@@ -1,18 +1,19 @@
 <?php
-    function insert_taikhoan($email,$username,$pass){
-        $sql = "INSERT INTO users(username,pass,email) VALUES('$username', '$pass', '$email')";
+    function insert_taikhoan($taikhoan,$matkhau,$tenKH,$sdtKH,$ngaysinhKH){
+        $sql = "INSERT INTO nguoidung(email,matkhau,hoten,sdt,ngaysinh)
+                 VALUES('$taikhoan','$matkhau','$tenKH','$sdtKH','$ngaysinhKH');";
         pdo_execute($sql);
     }
 
-    function check_user($user,$pass){
-        $sql = "SELECT * from users where username='".$user."' AND pass='".$pass."'";
+    function check_user($taikhoan,$matkhau){
+        $sql = "SELECT * from nguoidung where email='$taikhoan' AND matkhau='$matkhau'";
         $user = pdo_query_one($sql);
         return $user;
     }
-    function check_email($email){
-        $sql = "SELECT * from users where email='".$email."'";
-        $user = pdo_query_one($sql);
-        return $user;
+    function check_email($taikhoan){
+        $sql = "SELECT * FROM nguoidung WHERE email='$taikhoan'";
+        $kq = pdo_query_one($sql);
+        return $kq !== false;
     }
 
     function update_tk($id, $tentk, $pass, $email, $sdt, $dc, $role){
