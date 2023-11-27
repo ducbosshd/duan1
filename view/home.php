@@ -70,7 +70,7 @@
                         <div class="col-md-3 py-2 ">
                             <div class="sanpham">
                                 <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
+                                <a href="trangchu.php?act=chitietSP" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
                                 <p class="giaSP">325,000 VND</p>
                                 <form method="post">
                                     <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
