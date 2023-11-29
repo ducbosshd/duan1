@@ -23,27 +23,48 @@
                         <div class="row">
                             <div class="col">
                                 <div class="row">
-                                    <div class="col-3 ">
-                                        <div class="fs-3" >
-                                            <i class="fa-regular fa-user"></i>
+                                    <?php if(isset($_SESSION['taikhoan'])): ?>
+                                            <div class="col-3">
+                                                <div class="fs-3">
+                                                    <i class="fa-regular fa-user"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-9 fs-6" style="max-width: 150px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                                <?php if($_SESSION['taikhoan']['vaitro'] == 0): ?>
+                                                    <a href="trangchu.php?act=nguoidung" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
+                                                <?php else: ?>
+                                                    <a href="admin/index.php" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
+                                                <?php endif; ?>
+                                                <span style="overflow: visible; white-space: normal; text-overflow: unset;">
+                                                    <a href="trangchu.php?act=dangxuat">Đăng Xuất</a>
+                                                </span>
+                                            </div>
+                                    <?php else : ?>
+                                        <div class="col-3 ">
+                                            <div class="fs-3" >
+                                                <i class="fa-regular fa-user"></i>
+                                            </div>
+                                            </div>
+                                            <div class="col-9 fs-6 "><a href="trangchu.php?act=dangnhap" class="item_dangnhap">Xin Chào <br>
+                                                    <strong>ĐăngNhập</strong>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-9 fs-6 ">
-                                        <a href="dangnhap.html" class="item_dangnhap">Xin Chào <br>
-                                            <strong>ĐăngNhập</strong>
-                                        </a>
-                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="row">
                                     <div class="col">
-                                        <a href="#" class="position-relative">
-                                            <span class="fs-3 item_dangnhap"><i class="fa-regular fa-heart"></i></span>
-                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                            0
-                                            </span>
-                                        </a>
+                                            <form action="" method="post">
+                                                    <a href="#" class="position-relative">
+                                                        <span class="fs-3 item_dangnhap"><i class="fa-regular fa-heart"></i></span>
+                                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                        0
+                                                        </span>
+                                                    </a>
+                                            </form>
+                                        
                                     </div>
                                     <div class="col">
                                         <a href="#" class="position-relative">
@@ -73,7 +94,7 @@
                         <!-- kết thúc nút toggle menu -->
                       <div class="collapse navbar-collapse" id="menu_nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
+                            <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.html">Trang Chủ</a>
                           </li>
                           <li class="nav-item">

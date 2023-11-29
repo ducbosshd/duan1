@@ -1,9 +1,9 @@
 <?php
-    include '../mode/pdo.php';
-    include '../mode/danhmuc.php';
-    include '../mode/hanghoa.php';
-    include '../mode/binhluan.php';
-    include '../mode/taikhoan.php';
+    include '../model/pdo.php';
+    include '../model/danhmuc.php';
+    include '../model/hanghoa.php';
+    include '../model/binhluan.php';
+    include '../model/taikhoan.php';
     include 'header.php';
     if(isset($_GET['act'])){
         $act = $_GET['act'];
@@ -243,15 +243,20 @@
                 }
                 
                 break;
-            case 'dsha':
-                if(isset($_POST['btnok']) && $_POST['btnok']){
-                    $idhh = $_POST['idds'];
-                }else{
-                    $idhh = 0;
+            case 'dstk':
+                $dstk = loadall_tk();
+                include './taikhoan/dstk.php';
+                break;
+            case 'hang_tk':
+                if(isset($_POST['nangcap'])){
+                    $id = $_POST['id'];
+                    nangcap_tk($id);
                 }
-                $dshh = loadall_hh("", 0);
-                $dsha = loadall_hinhanh($iddm);
-                include './hanghoa/hinhanh.php';
+                if(isset($_POST['hacap'])){
+                    $id = $_POST['id'];
+                    hacap_tk($id);
+                }
+                header('location: index.php?act=dstk');
                 break;
             default:
                 # code...
