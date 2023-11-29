@@ -13,7 +13,7 @@
              ?>
             <div class="mb-3">
               <label for="taikhoan" class="form-label">Tài Khoản</label>
-              <input type="text" class="form-control" name="taikhoan" value="<?php echo isset($_SESSION['taikhoan']) ?  $_SESSION['taikhoan'] : "" ?>" id="taikhoan" placeholder="Nhập vào tài khoản của bạn...">
+              <input type="text" class="form-control" name="taikhoan" value="<?php echo isset($_SESSION['email']) ?  $_SESSION['email'] : "" ?>" id="taikhoan" placeholder="Nhập vào tài khoản của bạn...">
             </div>
             <div class="mb-3">
               <label for="matkhau" class="form-label">Mật Khẩu</label>

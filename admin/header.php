@@ -42,7 +42,7 @@
                             <a class="nav-link" href="ql_magiamgia.html">QL Mã Giảm Giá</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="ql_taikhoan.html">QL Tài Khoản</a>
+                            <a class="nav-link" href="index.php?act=dstk">QL Tài Khoản</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="ql_donhang.html">QL Đơn Hàng</a>
