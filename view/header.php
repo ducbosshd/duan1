@@ -43,10 +43,8 @@
                                         <div class="col-3 ">
                                             <div class="fs-3" >
                                                 <i class="fa-regular fa-user"></i>
-                                            </div>
-                                            </div>
-                                            <div class="col-9 fs-6 ">
-                                                <a href="trangchu.php?act=dangnhap" class="item_dangnhap">Xin Chào <br>
+                                            </div>           
+                                            <div class="col-9 fs-6 "><a href="trangchu.php?act=dangnhap" class="item_dangnhap">Xin Chào <br>
                                                     <strong>ĐăngNhập</strong>
                                                 </a>
                                             </div>
@@ -64,8 +62,7 @@
                                                         0
                                                         </span>
                                                     </a>
-                                            </form>
-                                        
+                                            </form>        
                                     </div>
                                     <div class="col">
                                         <a href="#" class="position-relative">
@@ -95,7 +92,7 @@
                         <!-- kết thúc nút toggle menu -->
                       <div class="collapse navbar-collapse" id="menu_nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
+                            <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.html">Trang Chủ</a>
                           </li>
                           <li class="nav-item">

@@ -1,30 +1,30 @@
-<div class="row">
-            <div class="row font_title">
-                <h1>Thêm mới loại hàng hóa</h1>
+<main>
+    <section class="add_dm">
+        <div class="container p-1">
+            <div class="name_add_dm text-center ">
+                <h3>Chỉnh sửa Danh Mục</h3>
             </div>
-            <div class="row frmcontent">
-                <form action="index.php?act=themdm" method="post" enctype="multipart/form-data">
-                    <div class="row mb10 form">
-                       <p> Mã loại</p>
-                        <input type="text" name="maloai" disabled>
+            <div class="form_nd">
+                <form action="" class="form_add_dm" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                    <label for="add_tendm" class="form-label">Tên Danh Mục</label>
+                    <input type="text" class="form-control" id="add_tendm" name="tenloai" placeholder="Nhập tên danh mục...">
                     </div>
-                    <div class="row mb10 form">
-                       <p> Tên loại</p>
-                        <input type="text" name="tenloai">
+                    <div class="mb-3">
+                    <div class="mb-3 ">
+                        <label for="hinhanhdm" class="form-label ">Hình Ảnh Danh Mục</label>
+                        <input type="file" class="form-control" id="hinhanhdm" name="hinhanh">
                     </div>
-                    <div class="row mb10 form">
-                       <p> Hình ảnh </p>
-                        <input type="file" name="hinhanh">
+                    <div class="flex-column">
+                        <button type="submit" class="btn btn-primary" name="luu_dm">Thêm mới</button>
+                        <button type="reset" class="btn btn-secondary">Nhập Lại</button>
+                        <a href="index.php?act=dsdm" class="btn btn-primary">Danh Sách Danh Mục</a>
                     </div>
-                    <div class="row_flex mb10">
-                        <input type="submit" name="luu_dm" value="Thêm mới"><br>
-                        <input type="reset" value="Nhập lại"><br>
-                        <a href="index.php?act=dsdm"><input type="button" value="Danh sách"></a>
-                    </div>
-                    <?php 
-                        if(isset($thongbao) && $thongbao!="") echo '<p style="color: green;">'.$thongbao.'</p>'
-                    ?>
                 </form>
+                <?php 
+                    if(isset($thongbao) && $thongbao!="") echo '<p style="color: green;">'.$thongbao.'</p>'
+                ?>
             </div>
         </div>
-    </div>
+    </section>
+</main>

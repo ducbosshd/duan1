@@ -6,9 +6,9 @@
     <div class="container">
         <form class="form_dangky" method="post" action="">
             <div class="mb-3">
-                <label for="taikhoan" class="form-label">Tài Khoản</label>
+                <label for="taikhoan" class="form-label">Email</label>
                 <input type="text" name="taikhoan" value="<?php echo (isset($_POST['taikhoan']) && !isset($_SESSION['taikhoan'])) ? $_POST['taikhoan'] : ''; ?>" class="form-control" id="taikhoan" placeholder="Nhập vào email của bạn...">
-                <span><?php echo (isset($_POST["dangkyTK"]) && isset($_SESSION['taikhoan'])) ? $_SESSION['taikhoan'] : ''; ?></span>
+                <span><?php echo (isset($_POST["dangkyTK"]) && isset($_SESSION['email'])) ? $_SESSION['email'] : ''; ?></span>
             </div>
             <div class="mb-3">
                 <label for="matkhau" class="form-label">Mật Khẩu</label>
@@ -40,3 +40,5 @@
         </form>
     </div>
 </main>
+
+

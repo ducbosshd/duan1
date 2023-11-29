@@ -3,9 +3,9 @@
 $_SESSION = [];
 
 if (empty($_POST['taikhoan']) || !filter_var($_POST['taikhoan'], FILTER_VALIDATE_EMAIL)) {
-    $_SESSION['taikhoan'] = "Email không hợp lệ!";
+    $_SESSION['email'] = "Email không hợp lệ!";
 }else{
-    $taikhoan = $_POST['taikhoan'];
+    $email = $_POST['taikhoan'];
 }
 
 if (empty($_POST['matkhau']) || !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $_POST['matkhau'])) {
@@ -45,6 +45,5 @@ function Age($birthdate) {
     $age = $today->diff($birthDate)->y;
     return $age;
 }
-
-
 ?>
+
