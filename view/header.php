@@ -95,10 +95,10 @@
                       <div class="collapse navbar-collapse" id="menu_nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Trang Chủ</a>
+                            <a class="nav-link" aria-current="page" href="trangchu.php">Trang Chủ</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="danhmucSP.html">Sản Phẩm</a>
+                            <a class="nav-link" href="trangchu.php?act=sanpham">Sản Phẩm</a>
                           </li>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" 
@@ -120,7 +120,7 @@
                         </ul>
                         <form class="d-flex align-items-center" action="" method="post">
                             <input class="timkiem" type="search" placeholder="Tìm Kiếm..." aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <button class="btn btn-outline-success" name="btnok" type="submit">Search</button>
                         </form>
                       </div>
                     </div>

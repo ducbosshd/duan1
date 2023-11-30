@@ -1,24 +1,24 @@
 <?php
-    include '../model/pdo.php';
-    include '../model/danhmuc.php';
-    include '../model/hanghoa.php';
-    include '../model/binhluan.php';
-    include '../model/taikhoan.php';
-    include 'header.php';
+    include 'model/pdo.php';
+    include 'model/danhmuc.php';
+    include 'model/hanghoa.php';
+    include 'model/binhluan.php';
+    include 'model/taikhoan.php';
+    include 'admin/header.php';
     if(isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act) {
             //danhmuc
             case 'dsdm':
                 $dsdm = loadall_dm();
-                include './danhmuc/danhsach.php';
+                include 'admin/danhmuc/danhsach.php';
                 break;
             case 'themdm':
                 if(isset($_POST['luu_dm'])){
                     if(!empty($_POST['tenloai'])){
                         $tenloai = $_POST['tenloai'];
                         if(!empty($_FILES['hinhanh']['name'])){
-                            $tagetDir = "../img1/";
+                            $tagetDir = "img1/";
                             $tagetFile = $tagetDir.($_FILES['hinhanh']['name']);
                             if(move_uploaded_file($_FILES['hinhanh']['tmp_name'], $tagetFile)){   
                                 $fileImage = $tagetFile;
@@ -31,13 +31,13 @@
                     }
                     
                 }
-                include './danhmuc/them.php';
+                include 'admin/danhmuc/them.php';
                 break;
             case 'suadm':
                 if(isset($_GET['id']) && $_GET['id']){
                     $dm = loadone_dm($_GET['id']);
                 }
-                include './danhmuc/capnhat.php';
+                include 'admin/danhmuc/capnhat.php';
                 break;
             case 'capnhatdm':
                 if(isset($_POST['luu_dm']) ){
@@ -60,14 +60,12 @@
                     }
                     
                 }
-                // $dsdm = loadall_dm();
-                // include './danhmuc/danhsach.php';
             case 'xoadm':
                 if(isset($_GET['id']) && $_GET['id']){
                     delete_dm($_GET['id']);
                 }
                 $dsdm = loadall_dm();
-                include './danhmuc/danhsach.php';
+                include 'admin/danhmuc/danhsach.php';
                 break;
             //hàng hóa
             case 'dshh':
@@ -81,7 +79,7 @@
                 $dshh = loadall_hh($kyw, $iddm);
                 $dsdm = loadall_dm();
                 $dstt = loadall_thuoctinh();
-                include './hanghoa/danhsach.php';
+                include 'admin/hanghoa/danhsach.php';
                 break;
             case 'themhh':
                 if(isset($_POST['luu_hh'])){
@@ -97,7 +95,7 @@
                         
                     }
                     if(!empty($_FILES['hinhanhchinh']['name'])){
-                        $tagetDir = "../img1/";
+                        $tagetDir = "img1/";
                         $tagetFile = $tagetDir.($_FILES['hinhanhchinh']['name']);
                         if(move_uploaded_file($_FILES['hinhanhchinh']['tmp_name'], $tagetFile)){   
                             $fileImage = $tagetFile;
@@ -110,7 +108,7 @@
                     if(!empty($_FILES['hinhanhphu']['name'])){
                         $files = $_FILES['hinhanhphu'];
                         $length = count($files['name']);
-                        $tagetDir = "../img1/";
+                        $tagetDir = "img1/";
                         $images = [];
                         for($i = 0; $i < $length; $i++){
                             $tagetFile = $tagetDir.$files['name'][$i];
@@ -148,7 +146,7 @@
                 $dsdm = loadall_dm();
                 $dshh = loadall_hh("",0);
                 $dstt = loadall_thuoctinh();
-                include './hanghoa/them.php';
+                include 'admin/hanghoa/them.php';
                 break;
             case 'xoahh':
                 if(isset($_GET['id']) && $_GET['id']){
@@ -157,7 +155,7 @@
                 $dsdm = loadall_dm();
                 $dshh = loadall_hh("",0);
                 $dstt = loadall_thuoctinh();
-                include './hanghoa/danhsach.php';
+                include 'admin/hanghoa/danhsach.php';
                 break;
             case 'suahh':
                 if(isset($_GET['id']) && $_GET['id']){
@@ -169,7 +167,7 @@
 
                 $dstt = loadall_thuoctinh();
                 $dsdm = loadall_dm();
-                include './hanghoa/capnhat.php';
+                include 'admin/hanghoa/capnhat.php';
                 break;
             case 'capnhathh':
                 if(isset($_POST['luu_hh'])){
@@ -187,7 +185,7 @@
                         
                     }
                     if(!empty($_FILES['hinhanhchinh']['name'])){
-                        $tagetDir = "../img1/";
+                        $tagetDir = "img1/";
                         $tagetFile = $tagetDir.($_FILES['hinhanhchinh']['name']);
                         if(move_uploaded_file($_FILES['hinhanhchinh']['tmp_name'], $tagetFile)){   
                             $fileImage = $tagetFile;
@@ -200,7 +198,7 @@
                     if(!empty($_FILES['hinhanhphu']['name'])){
                         $images = $_FILES['hinhanhphu'];
                         $length = count($images['name']);
-                        $tagetDir = "../img1/";
+                        $tagetDir = "img1/";
                         for($i = 0; $i < $length; $i++){
                             $tagetFile = $tagetDir.$images['name'][$i];
                             if(move_uploaded_file($images['tmp_name'][$i],$tagetFile)){
@@ -226,7 +224,7 @@
                     $dsdm = loadall_dm();
                     $dshh = loadall_hh("",0);
                     $dstt = loadall_thuoctinh();
-                    include './hanghoa/danhsach.php';
+                    include 'admin/hanghoa/danhsach.php';
                 }
                 
                 if(isset($_POST['xoaanh'])){
@@ -239,13 +237,13 @@
     
                     $dstt = loadall_thuoctinh();
                     $dsdm = loadall_dm();
-                    include './hanghoa/capnhat.php';
+                    include 'admin/hanghoa/capnhat.php';
                 }
                 
                 break;
             case 'dstk':
                 $dstk = loadall_tk();
-                include './taikhoan/dstk.php';
+                include 'admin/taikhoan/dstk.php';
                 break;
             case 'hang_tk':
                 if(isset($_POST['nangcap'])){
@@ -273,6 +271,6 @@
         $dshh = loadall_hh($kyw, $iddm);
         $dsdm = loadall_dm();
         $dstt = loadall_thuoctinh();
-        include './hanghoa/danhsach.php';
+        include 'admin/hanghoa/danhsach.php';
     }
 ?>

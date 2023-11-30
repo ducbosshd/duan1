@@ -3,6 +3,7 @@ session_start();
 ob_start();
 include "model/pdo.php";
 include "model/danhmuc.php";
+include "model/hanghoa.php";
 include "model/binhluan.php";
 include "model/taikhoan.php";
 // include "global.php";
@@ -13,9 +14,35 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
     $act = $_GET['act'];
     switch ($act) {
         case "sanpham":
+            if(isset($_POST['btnok']) && $_POST['btnok']){
+                $kyw = $_POST['kyw'];
+                $iddm = $_POST['iddm'];
+            }else{
+                $kyw = "";
+                $iddm = 0;
+            }
+            $dshh = loadall_hh($kyw, $iddm);
             include "view/sanpham.php";
             break;
         case "sanphamct":
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
+            }
+            if(isset($_POST['thembl'])){
+                if(!empty($_POST['binhluan'])){
+                    $binhluan = $_POST['binhluan'];
+                }
+                $iduser = $_SESSION['taikhoan']['id'];
+                $ngaybinhluan = date('d/m/Y H:i:s');
+                insert_bl($binhluan, $iduser, $id, $ngaybinhluan);
+                var_dump($ngaybinhluan);
+            }
+            $hh = loadone_hh($id);
+            $dsha = loadall_hinhanh($id);
+            $mausac = loadall_tt_hanghoa($id,1);
+            $kichco = loadall_tt_hanghoa($id,2);
+            $binhluan = loadall_bl($id);
+            $spcl = loadall_hh("", $hh['id_danhmuc']);
             include "view/chitietSP.php";
             break;
         case "dangky":
@@ -72,6 +99,9 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             break;
     }
 }else{
+    
+    $dshh = loadtop8_hh();
+    $dsdm = loadall_dm();
     include "view/home.php";
 }
 include "view/footter.php";

@@ -273,7 +273,6 @@ h3 {
     border-radius: 5px;
 }
 .mausac{
-    background-color: #FF0000;
     width: 30px; 
     height: 30px; 
     border-radius: 50%; 
@@ -387,3 +386,7 @@ h3 {
     display: flex;
 }
 /* tìm kiếm adm */
+/* bình luận*/
+.themBL {
+    margin: 0 !important;
+}

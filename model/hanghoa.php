@@ -83,9 +83,9 @@
     function loadall_hinhanh($idhh){
         $sql = "select * from hinhanh where 1";
         if($idhh > 0){
-            $sql .= "and id_hanghoa = '".$idhh."'";
+            $sql .= " and id_hanghoa = ".$idhh;
         }
-        $sql.= " order by id_hanghoa";
+        $sql.= " order by id";
         $hinhanh = pdo_query($sql);
         return $hinhanh;
     }

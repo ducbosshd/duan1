@@ -43,118 +43,40 @@
                     <div class="container">
                         <h3 class="text-center pt-2 pb-2 ">DANH MỤC MUA HÀNG</h3>
                         <div class="row">
-                            <div class="col-md-4 mb-3">
+                            <?php foreach($dsdm as $dm){
+                                extract($dm);?>
+                                <div class="col-md-4 mb-3">
                                 <div class="anhdm">
-                                    <img src="img1/ao1.jpg" alt="" class="w-100 anh_dm">
-                                    <div class="tenanh"><a href=""><strong style="font-size: 20px">Áo</strong></a></div>
+                                    <a href="">
+                                    <img src="<?=$hinhanh?>" alt="" class="w-100 anh_dm">
+                                    <div class="tenanh"><strong style="font-size: 20px"><?=$ten?></strong></div></a>
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="anhdm">
-                                    <img src="img1/quan1.jpg" alt="" class="w-100 anh_dm">
-                                    <div class="tenanh"><a href=""><strong style="font-size: 20px">Quần</strong></a></div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="anhdm">
-                                    <img src="img1/phukien3.jpg" alt="" class="w-100 anh_dm">
-                                    <div class="tenanh"><a href=""><strong style="font-size: 20px">Phụ Kiện</strong></a></div>
-                                </div>
-                            </div>
+                            <?php }
+                            ?>
                         </div>           
                     </div>
                 </div>
                 <div class="topSP">
                     <h3 class="text-center pt-3 ">SẢN PHẨM BÁN CHẠY</h3><hr>
                     <div class="row">
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>                         
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-3 py-2 ">
-                            <div class="sanpham">
-                                <img src="img1/ao2.jpg" alt="Áo Khoác Gió Regular" class="img-fluid">
-                                <a href="#" class="tenSP"><strong style="font-size: 20px">Áo Khoác Gió Regular</strong></a>
-                                <p class="giaSP">325,000 VND</p>
-                                <form method="post">
-                                    <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
-                                    <i class="fas fa-heart heart-icon"></i>
-                                </form>
-                            </div>
-                        </div>
+                        <?php foreach($dshh as $hh){
+                            extract($hh);
+                            $hadd = load_hinhanh_dd($id);
+                            ?>
+                            <div class="col-md-3 py-2 ">
+                                <div class="sanpham">
+                                    <a href="trangchu.php?act=sanphamct&id=<?=$id?>" class="tenSP">  
+                                    <img src="<?=$hadd['hinhanh_url']?>" alt="<?=$ten?>" class="img-fluid">
+                                    <br><strong style="font-size: 20px"><?=$ten?></strong>
+                                    <p class="giaSP"><?=$gia?> VND</p></a>
+                                    <form method="post">
+                                        <button type="submit" class="themSP">THÊM VÀO GIỎ HÀNG</button>
+                                        <i class="fas fa-heart heart-icon"></i>
+                                    </form>
+                                </div>
+                            </div>   
+                        <?php }?>                                     
                     </div>
                 </div>   
                 <div class="tintuc">
