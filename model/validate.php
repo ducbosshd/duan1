@@ -45,6 +45,5 @@ function Age($birthdate) {
     $age = $today->diff($birthDate)->y;
     return $age;
 }
-
-
 ?>
+

@@ -43,8 +43,7 @@
                                         <div class="col-3 ">
                                             <div class="fs-3" >
                                                 <i class="fa-regular fa-user"></i>
-                                            </div>
-                                            </div>
+                                            </div>           
                                             <div class="col-9 fs-6 "><a href="trangchu.php?act=dangnhap" class="item_dangnhap">Xin Chào <br>
                                                     <strong>ĐăngNhập</strong>
                                                 </a>
@@ -63,8 +62,7 @@
                                                         0
                                                         </span>
                                                     </a>
-                                            </form>
-                                        
+                                            </form>        
                                     </div>
                                     <div class="col">
                                         <a href="#" class="position-relative">

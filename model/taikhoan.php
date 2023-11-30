@@ -44,7 +44,6 @@
         $sql="delete from users where id_user=".$id;
         pdo_execute($sql);
     }
-
     function nangcap_tk($id){
         $sql = "update nguoidung set vaitro = vaitro + 1 where id=".$id;
         pdo_execute($sql);

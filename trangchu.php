@@ -52,13 +52,11 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             
             if (isset($_POST["dangkyTK"])) {
                 include "model/validate.php";        
- 
                 if (!isset($_SESSION['email']) && 
                     !isset($_SESSION['matkhau']) && 
                     !isset($_SESSION['tenKH']) && 
                     !isset($_SESSION['sdtKH']) && 
                     !isset($_SESSION['ngaysinhKH'])) {
-                    
                     if(empty(check_email($email))){
                         insert_taikhoan($email, $matkhau, $tenKH, $sdtKH, $ngaysinhKH);
                         

@@ -62,7 +62,6 @@
         $hh = pdo_query($sql);
         return $hh;
     }
-
     function update_hh($id, $tenhh, $gia,$mota,$iddm){
         $sql = "update hanghoa set ten = '".$tenhh."',gia = '".$gia."',
         mota = '".$mota."', id_danhmuc = '".$iddm."'  where id =".$id;

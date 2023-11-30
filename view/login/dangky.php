@@ -1,3 +1,7 @@
+ <?php
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     var_dump($_POST);}
+?> 
 <main>
     <div class="container">
         <form class="form_dangky" method="post" action="">
@@ -36,3 +40,5 @@
         </form>
     </div>
 </main>
+
+
