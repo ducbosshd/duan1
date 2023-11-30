@@ -161,7 +161,7 @@ h3 {
 /* end */
 /* top sp */
 .sanpham {
-text-align: center;
+    text-align: center;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -300,7 +300,7 @@ text-align: center;
 /* Thông tin Giao hàng */
 .form_tomtatGH{
     border: 1px solid black;
-border-radius: 5px;
+    border-radius: 5px;
 }
 .tienhanhDH{
     background-color: white; 
@@ -385,5 +385,5 @@ border-radius: 5px;
 .image-chitiet {
     display: flex;
 }
-
 /* tìm kiếm adm */
+
