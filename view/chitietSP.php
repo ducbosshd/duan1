@@ -63,24 +63,25 @@
                 </div><br>
                <div class="binhluan py-5">
                     <h4>Bình Luận</h4><hr>
-                    <!-- <div class="bangBL">
-                        <table class="table">
+                    <div class="bangBL">
+                        <!-- <table class="table">
                             <thead>
                               <tr>
                                 <th scope="col">Người dùng</th>
                                 <th scope="col">Nội Dung</th>
                                 <th scope="col">Thời Gian</th>
                               </tr>
-                            </thead> -->
+                            </thead>  -->
                             <!-- <tbody class="table-group-divider"> -->
                                 <?php foreach($binhluan as $bl){
                                     extract($bl);
                                     $nd = loadone_tk($id_nguoidung);
-                                    echo '
+                                    echo '<div>
                                         <strong>'.$nd['hoten'].'</strong><br>
-                                            <span>'.$noidung.'</span><br>
-                                            <span>'.$ngaybinhluan.'</span><br>
-                                        </tr>'; }?>
+                                        <span>'.$ngaybinhluan.'</span><br>
+                                        <span>'.$noidung.'</span><br>
+                                        </div>    
+                                        '; }?>
                             <!-- </tbody>
                           </table> -->
                     </div>
@@ -89,15 +90,14 @@
                             <div class="container-fluid">
                                 <form class="d-flex" action="" method="post">
                                 <input style="margin: 0 4px;" name="binhluan" class="form-control vietBL" type="text" placeholder="Bình Luận...">
-                                <button name="thembl" class="btn btn-outline-success themBL" type="submit">Bình Luận</button>
+                                <button name="thembl" style="margin: 0;" class="btn btn-outline-success themBL" type="submit">Bình Luận</button>
                                 </form>
                             </div>
                         </div>
                     <?php } else{?>
                         <p>Bạn cần <a href="trangchu.php?act=dangnhap">đăng nhập</a> mới có thể bình luận</p>
                     <?php }?>
-                    
-                 </div>
+               </div>
                 <div class="SPlienquan">
                     <h2>Sản Phẩm Cùng Loại</h2><hr>
                     <div class="row">

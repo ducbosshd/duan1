@@ -16,12 +16,10 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
         case "sanpham":
             if(isset($_POST['btnok']) && $_POST['btnok']){
                 $kyw = $_POST['kyw'];
-                $iddm = $_POST['iddm'];
             }else{
                 $kyw = "";
-                $iddm = 0;
             }
-            $dshh = loadall_hh($kyw, $iddm);
+            $dshh = loadall_hh($kyw, 0);
             include "view/sanpham.php";
             break;
         case "sanphamct":

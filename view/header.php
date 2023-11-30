@@ -33,7 +33,7 @@
                                                 <?php if($_SESSION['taikhoan']['vaitro'] == 0): ?>
                                                     <a href="trangchu.php?act=nguoidung" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
                                                 <?php else: ?>
-                                                    <a href="admin/index.php" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
+                                                    <a href="index.php" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
                                                 <?php endif; ?>
                                                 <span style="overflow: visible; white-space: normal; text-overflow: unset;">
                                                     <a href="trangchu.php?act=dangxuat">Đăng Xuất</a>

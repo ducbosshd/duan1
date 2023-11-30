@@ -56,7 +56,7 @@
                     <div class="col-md-6 ">
                         <h5>Nhận Tin Khuyến Mãi</h5>
                         <form class="input-group mb-3" action="" method="post">
-                            <input type="text" class="form-control" name="email" placeholder="Vui Lòng Nhập Vào Email..."
+                            <input style="margin: 0;" type="text" class="form-control" name="email" placeholder="Vui Lòng Nhập Vào Email..."
                                 aria-label="Vui Lòng Nhập Vào Email..." aria-describedby="basic-addon2">
                             <span class="input-group-text text-white bg-danger" id="basic-addon2">
                                 <button type="submit" class="btn" id="dangkyKM">Đăng Ký</button>
