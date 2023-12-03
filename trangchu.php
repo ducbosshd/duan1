@@ -91,6 +91,10 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             header('location:trangchu.php');
             break;    
         case "quenmk":
+            if(isset($_POST['guiemail'])){
+                $email = $_POST['email'];
+                $guimail = sendMail($email);
+            }
             include "view/login/quenmk.php";
             break;
     }
