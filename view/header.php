@@ -104,9 +104,13 @@
                                 Danh Mục
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <li><a class="dropdown-item" href="#">Áo</a></li>
-                              <li><a class="dropdown-item" href="#">Quần</a></li>
-                              <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+                                <?php 
+                                    foreach ($dsdm as $dm){
+                                    extract($dm);
+                                    $linkdm = "trangchu.php?act=danhmuc&iddm=".$id;
+                                    echo '<li><a class="dropdown-item" href="'.$linkdm.'">'.$ten.'</a> </li>';
+                                    }
+                                ?>
                             </ul>
                           </li>
                           <li class="nav-item">

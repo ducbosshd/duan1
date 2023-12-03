@@ -7,6 +7,7 @@ include "model/hanghoa.php";
 include "model/binhluan.php";
 include "model/taikhoan.php";
 // include "global.php";
+$dsdm = loadall_dm();
 include "view/header.php";
 
 
@@ -21,6 +22,16 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             }
             $dshh = loadall_hh($kyw, 0);
             include "view/sanpham.php";
+            break;
+        case "danhmuc":
+            if(isset($_GET['iddm']) && ($_GET['iddm'] > 0)){
+                $iddm = $_GET['iddm'];
+            }else{
+                $iddm = 0;
+            }
+            $dshh = loadall_hhdm($iddm);
+            $tendm = load_ten_dm($iddm);
+            include "view/danhmucSP.php";
             break;
         case "sanphamct":
             if(isset($_GET['id'])){
@@ -98,10 +109,8 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             include "view/login/quenmk.php";
             break;
     }
-}else{
-    
+}else{   
     $dshh = loadtop8_hh();
-    $dsdm = loadall_dm();
     include "view/home.php";
 }
 include "view/footter.php";
