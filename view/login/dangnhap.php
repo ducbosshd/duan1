@@ -22,7 +22,7 @@
             <div class="row py-1 ">
                 <div class="col-9 ">
                     <a href="trangchu.php?act=dangky" class="dangky">Đăng Ký</a><br>
-                    <a href="quenmk.html" class="quenMK">Quên Mật Khẩu</a>
+                    <a href="trangchu.php?act=quenmk" class="quenMK">Quên Mật Khẩu</a>
                 </div>
                 <div class="col-3">
                     <button type="submit" name="dangnhap" class="dangnhap">Đăng Nhập</button>
