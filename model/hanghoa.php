@@ -22,7 +22,19 @@
         $listhh = pdo_query($sql);
         return $listhh;
     }
+    function loadall_hhdm($iddm = 0) {    
+        $sql = "SELECT * FROM hanghoa";
 
+        if ($iddm > 0) {
+            $sql .= " WHERE id_danhmuc = $iddm";
+        }
+        
+        $sql .= " ORDER BY id DESC";
+        
+        $listsanpham = pdo_query($sql);
+
+        return $listsanpham;
+}
     function loadall_hh_top10(){
         $sql = "select * from hanghoa where 1 order by view desc limit 0,10";
         $listhh = pdo_query($sql);
@@ -48,10 +60,10 @@
 
     function load_ten_dm($iddm){
         if($iddm > 0){
-            $sql = "select * from category where id_danhmuc =".$iddm;
+            $sql = "select * from danhmuc where id =".$iddm;
             $dm = pdo_query_one($sql);
             extract($dm);
-            return $category_name;
+            return $ten;
         }else{
             return "";
         }
