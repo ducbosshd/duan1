@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include 'model/pdo.php';
     include 'model/danhmuc.php';
     include 'model/hanghoa.php';
