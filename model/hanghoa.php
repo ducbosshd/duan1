@@ -68,6 +68,17 @@
         pdo_execute($sql);
     }
 
+    function load_spc($id){
+        $sql = "select * from sanphamchon where id=".$id;
+        $spc = pdo_query_one($sql);
+        return $spc;
+    } 
+    function xoa_giohang($id){
+        $sql = "DELETE from giohang where id=".$id;
+        var_dump($sql);
+        pdo_execute($sql);
+    }
+
     //load hình ảnh hàng hóa
     function load_hinhanh_dd($id){
         $sql = "select * from hinhanh where vitri = 0 and id_hanghoa =".$id;
@@ -126,6 +137,13 @@
         and gt_tt.id_thuoctinh = ".$id_tt;
         $tt_hh = pdo_query($sql);
         return $tt_hh;
+    }
+    function loadall_tt_spc($id_spc, $id_tt){
+        $sql = "select gt_tt.id, gt_tt.tengiatri, gt_tt.id_thuoctinh from thuoctinh_sanphamchon as tt_spc inner join 
+        giatrithuoctinh as gt_tt on tt_spc.id_giatrithuoctinh = gt_tt.id  where  tt_hh.id_sanphamchon = '$id_spc'
+        and gt_tt.id_thuoctinh = ".$id_tt;
+        $tt_spc = pdo_query($sql);
+        return $tt_spc;
     }
 
     function delete_tt_hh($id_hh){

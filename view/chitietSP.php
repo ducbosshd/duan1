@@ -18,7 +18,7 @@
                         </div> 
                      </div>
                     <div class="col-4 select_chitietSP">
-                        <form action="" method="post">
+                        <form action="<?php echo (isset($_SESSION['taikhoan']))?"trangchu.php?act=donhang":''?>" method="post">
                         <div class="chitietSP_trangthai">
                             <h4><?=$ten?></h4>
                             <span class="trangthaiSP">Trạng thái của SP(còn hàng,hết hàng)</span><hr>
@@ -28,14 +28,14 @@
                             <h5>Màu Sắc</h5>
                             <?php foreach ($mausac as $ms){
                                 extract($ms);?>
-                                <div class="mausac" style="background-color: <?=$tengiatri?>;"><input type="radio" name="mausac" value="<?$id?>" style="position:absolute;"></div>
+                                <div class="mausac" style="background-color: <?=$tengiatri?>;"><input type="radio" name="mausac" value="<?=$id?>" style="position:absolute;"></div>
                             <?php }?>
                             
                         </div>
                         <div class="select_size">
                             <h5>Kích Cỡ</h5>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Chọn kích cỡ...</option>
+                            <select name="kichco" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Chọn kích cỡ...</option>
                                 <?php foreach($kichco as $kc){
                                     extract($kc);?>
                                     <option value="<?=$id?>"><?=$tengiatri?></option>
@@ -47,8 +47,9 @@
                             <input type="number" class="form-control" name="soluong" min="1" value="1">
                         </div><br>
                         <div class="row ">
+                            <input type="hidden" name="id" value="<?=$id?>">
                             <div class="col-6 ">
-                                <button type="submit" class="themSP">Thêm Vào Giỏ Hàng</button>
+                                <a href="<?php echo (!isset($_SESSION['taikhoan']))?"javascript:confirmDN('trangchu.php?act=dangnhap')":''?>"><button name="themSP" type="<?php echo (!isset($_SESSION['taikhoan']))?'button':'submit'?>" class="themSP">Thêm Vào Giỏ Hàng</button></a>
                             </div>
                             <div class="col-6 d-flex justify-content-center">
                                 <button type="submit" class="muangay">Mua Ngay</button>
@@ -122,3 +123,10 @@
             </div>
        </section>
     </main>
+    <script>
+        function confirmDN(url){
+            if(confirm('Bạn phải đăng nhập mới thêm được vào giỏ hàng. Bạn có muốn đăng nhập không?')){
+                document.location = url;
+            }
+        }
+    </script>

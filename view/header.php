@@ -21,35 +21,24 @@
                     </div>
                     <div class="col-md-3 p-0 item_hearder">
                         <div class="row">
+                           <?php if(isset($_SESSION['taikhoan'])): ?>
                             <div class="col">
                                 <div class="row">
-                                    <?php if(isset($_SESSION['taikhoan'])): ?>
-                                            <div class="col-3">
-                                                <div class="fs-3">
-                                                    <i class="fa-regular fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-9 fs-6" style="max-width: 150px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                                <?php if($_SESSION['taikhoan']['vaitro'] == 0): ?>
-                                                    <a href="trangchu.php?act=nguoidung" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
-                                                <?php else: ?>
-                                                    <a href="index.php" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
-                                                <?php endif; ?>
-                                                <span style="overflow: visible; white-space: normal; text-overflow: unset;">
-                                                    <a href="trangchu.php?act=dangxuat">Đăng Xuất</a>
-                                                </span>
-                                            </div>
-                                    <?php else : ?>
-                                        <div class="col-3 ">
-                                            <div class="fs-3" >
-                                                <i class="fa-regular fa-user"></i>
-                                            </div>           
-                                            <div class="col-9 fs-6 "><a href="trangchu.php?act=dangnhap" class="item_dangnhap">Xin Chào <br>
-                                                    <strong>ĐăngNhập</strong>
-                                                </a>
-                                            </div>
+                                    <div class="col-3">
+                                        <div class="fs-3">
+                                            <i class="fa-regular fa-user"></i>
                                         </div>
-                                    <?php endif; ?>
+                                    </div>
+                                    <div class="col-9 fs-6" style="max-width: 150px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                        <?php if($_SESSION['taikhoan']['vaitro'] == 0): ?>
+                                            <a href="trangchu.php?act=nguoidung" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
+                                        <?php else: ?>
+                                            <a href="index.php" class="item_dangnhap"><?php echo $_SESSION['taikhoan']['email']; ?></a>
+                                        <?php endif; ?>
+                                        <span style="overflow: visible; white-space: normal; text-overflow: unset;">
+                                            <a href="trangchu.php?act=dangxuat">Đăng Xuất</a>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
@@ -65,15 +54,34 @@
                                             </form>        
                                     </div>
                                     <div class="col">
-                                        <a href="#" class="position-relative">
+                                        <a href="trangchu.php?act=giohang" class="position-relative">
                                         <span class="fs-3 item_dangnhap"><i class="fa-solid fa-cart-shopping"></i></span>
                                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        0
+                                        <?php if(isset($_SESSION['taikhoan'])){
+                                            echo $sl = soluong_giohang($_SESSION['taikhoan']['id']);
+                                        } else{
+                                            echo '0';
+                                        }?>
                                         </span>
                                     </a>
                                     </div>
                                 </div>
                             </div>
+                            <?php else : ?>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-3 ">
+                                        <div class="fs-3" >
+                                            <i class="fa-regular fa-user"></i>
+                                        </div>           
+                                        <div class="col-9 fs-6 "><a href="trangchu.php?act=dangnhap" class="item_dangnhap">Xin Chào <br>
+                                                <strong>ĐăngNhập</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

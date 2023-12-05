@@ -6,6 +6,7 @@ include "model/danhmuc.php";
 include "model/hanghoa.php";
 include "model/binhluan.php";
 include "model/taikhoan.php";
+include "model/giohang.php";
 // include "global.php";
 include "view/header.php";
 
@@ -92,6 +93,44 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             break;    
         case "quenmk":
             include "view/login/quenmk.php";
+            break;
+        case "donhang":
+            
+            if(isset($_POST['themSP'])){
+                // if(is_array($_SESSION['taikhoan'])){
+                    echo 'a';
+                    $idsp = $_POST['id'];
+                    $idkh = $_SESSION['taikhoan']['id'];
+                    if(!empty($_POST['soluong'])){
+                        $sl = $_POST['soluong'];
+                    }
+                    if(!empty($_POST['mausac'])){
+                        $ms = $_POST['mausac'];
+                    }
+                    if(!empty($_POST['kichco'])){
+                        $kc = $_POST['kichco'];
+                    }
+                    insert_giohang($idsp, $sl, $idkh,$ms,$kc);
+                // }else{
+                //     header('location: javascrtip:confrimDN()');
+                // }
+            }
+            header('location: trangchu.php?act=sanphamct&id='.$idsp);
+            break;
+        case "giohang":
+            if(isset($_SESSION['taikhoan'])){
+                $id_kh = $_SESSION['taikhoan']['id'];
+            }
+            if(isset($_POST['xoaSPC'])){
+            }
+            $giohang = load_giohang($id_kh);
+            include 'view/giohang.php';
+            break;
+        case "xoaspc":
+            if(isset($_GET['id'])){
+                xoa_giohang($_GET['id']);
+            }
+            header('location: trangchu.php?act=giohang');
             break;
     }
 }else{

@@ -29,7 +29,8 @@
                             <th scope="col">Ngày Sinh</th>
                             <th scope="col">Số Điện Thoại</th>
                             <th scope="col">Vai trò</th>
-                            <th scope="col">Hành Động</th>
+                            <?php if($_SESSION['taikhoan']['vaitro'] == 2){?>
+                            <th scope="col">Hành Động</th> <?php }?>
                           </tr>
                         </thead>
                         <tbody class="table-group-divider ">
@@ -43,18 +44,21 @@
                                         <td><?=$ngaysinh?></td>
                                         <td><?=$sdt?></td>
                                         <td><?=$vaitro?><br>
-                                          <form action="index.php?act=hang_tk" method="post">
-                                            <input type="hidden" name="id" value="<?=$id?>">
-                                            <?php if($vaitro < 2){?>
-                                              <button type="submit" name="nangcap" class="btn btn-success">Nâng cấp</button>
-                                            <?php } if(0<$vaitro){?>
-                                              <button type="submit" class="btn btn-warning" name="hacap">Hạ cấp</button>
-                                            <?php }?>
-                                          </form>
+                                          <?php if($_SESSION['taikhoan']['vaitro'] == 2){?>
+                                            <form action="index.php?act=hang_tk" method="post">
+                                              <input type="hidden" name="id" value="<?=$id?>">
+                                              <?php if($vaitro < 2){?>
+                                                <button type="submit" name="nangcap" class="btn btn-success">Nâng cấp</button>
+                                              <?php } if(0<$vaitro){?>
+                                                <button type="submit" class="btn btn-warning" name="hacap">Hạ cấp</button>
+                                              <?php }?>
+                                            </form>
+                                            <?php }else{"";}?>
                                         </td>
+                                        <?php if($_SESSION['taikhoan']['vaitro'] == 2){?>
                                         <td>
                                             <a href="#"><input type="button" value="Xóa Tài Khoản" class="btn btn-danger "></a>
-                                        </td>
+                                        </td><?php }?>
                                     </tr>';
                             <?php }?>
                           
