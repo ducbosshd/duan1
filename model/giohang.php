@@ -25,4 +25,27 @@
         $giohang = pdo_query($sql);
         return $giohang;
     }
+    function updateGH($idspc,$soluong){
+        $sql = "UPDATE sanphamchon SET soluong = $soluong WHERE id = $idspc";
+        pdo_execute($sql);
+    }
+    function hoantatDH($tenKH,$sdtKH,$diachi,$id_KH,$ghichu,$tinhtrang_TT){
+       if($id_KH != ''){ $sql = "INSERT INTO donhang (id_nguoidung,hoten_nn,sdt_nn,diachi_nn,ghichu_nn,tinhtrangthanhtoan) 
+                                VALUES ('$id_KH','$tenKH','$sdtKH','$diachi','$ghichu','$tinhtrang_TT')";
+        }else{
+            $sql = "INSERT INTO donhang (hoten_nn,sdt_nn,diachi_nn,ghichu_nn,tinhtrangthanhtoan) 
+            VALUES ('$tenKH','$sdtKH','$diachi','$ghichu','$tinhtrang_TT')";
+        }
+        pdo_execute($sql);
+    }
+    function idDH(){
+        $sql = "SELECT id FROM `donhang` WHERE 1 ORDER BY id DESC LIMIT 0,1";
+        $id = pdo_query_one($sql);
+        return $id;
+    }
+    function chitiet_DH($id_spc, $id_DH){
+        $sql = "INSERT INTO chitietdonhang (id_donhang,id_hanghoachon) VALUES ('$id_DH','$id_spc')";
+        var_dump($sql);
+        pdo_execute($sql);
+    }
 ?>

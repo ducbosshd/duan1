@@ -1,55 +1,73 @@
 <main>
-       <div class="container py-5"><br>
+       <div class="container"><br>
         <h3>Thông Tin Giao Hàng</h3><hr>
+        <form class="form_thongtinGH " action="trangchu.php?act=hoantatTH" method="post">
             <div class="row m-4">
                 <div class="col-8 ">
-                    <form class="form_thongtinGH " action="" method="post">
-                          <input type="text" class="form-control hoten" id="hovaten" placeholder="Họ và tên..."><br>
-                          <input type="text" class="form-control sdt" id="sodienthoai" placeholder="Số điện thoại..."><br>
-                          <input type="text" class="form-control dia_chi" id="diachi" placeholder="Địa chỉ..."><br>
-                          <textarea class="form-control ghichu" id="ghichu" rows="3" placeholder="Ghi chú..."></textarea><br>
-                          <select class="form-select thanhtoan" aria-label="Default select example">
-                            <option selected>Chọn Phương Thức Thanh Toán</option>
-                            <option value="1">Thanh Toán Khi Nhận Hàng (COD)</option>
-                            <option value="2">Thanh Toán Online</option>
-                          </select>  
-                    </form>
+                          <input type="text" value="<?php echo $_SESSION['taikhoan']['hoten']; ?>" class="form-control hoten" name="tenKH" id="hovaten" placeholder="Họ và tên..."><br>
+                          <input type="text" value="<?php echo $_SESSION['taikhoan']['sdt']; ?>"class="form-control sdt" name="sdtKH" id="sodienthoai" placeholder="Số điện thoại..."><br>
+                          <input type="text"class="form-control dia_chi" name="diachi" id="diachi" placeholder="Địa chỉ nhận hàng..."><br>
+                          <textarea class="form-control ghichu" name="ghichu" rows="3" placeholder="Ghi chú..."></textarea><br>
+                          <select class="form-select thanhtoan" id="tinhtrangTT" name="tinhtrangTT" aria-label="Default select example" onchange="hienthi()">
+                                <option selected>Chọn Phương Thức Thanh Toán</option>
+                                <option value="shipCOD">Thanh Toán Khi Nhận Hàng (COD)</option>
+                                <option value="daTT">Thanh Toán Online</option>
+                          </select> 
+                          <div style="display: none;" id="thanhtoanol">
+                            <p>heeloo</p>
+                          </div>
                 </div>
                 <div class="col-4 ">
                     <div class="row SPthanhtoan">
-                        <div class="col-auto  ">
-                            <img src="img1/ao1.jpg" alt="" width="60px" height="80px">
-                        </div>
-                        <div class="col-auto  ">
-                            <h6>Áo Blazer Fitted</h6>
-                            <input type="number" class="form-control" name="soluong" min="1" value="1">
-                        </div>
-                        <div class="col-auto">
-                            <p>1.000.000đ</p>
-                            <button class="btn btn-outline-success XoaSPthanhtoan" type="submit">Xóa</button>
-                        </div>
-                    </div><hr>
-                    <form class="d-flex" action="" method="post">
-                        <input class="form-control me-2 magiamGia" type="text" placeholder="Mã Giảm Giá">
-                        <button class="btn btn-outline-success SDmagiamGia" type="submit">Dùng</button>
-                    </form><br>
+                        <?php if(isset($giohang)){ foreach ($giohang as $gh){
+                        extract($gh); 
+                        $spc = load_spc($id_spchon);
+                        $hh= loadone_hh($spc['id_hanghoa']);
+                        $hdd = load_hinhanh_dd($hh['id']);
+                        ?>
+                        <table class="table">
+                            <tr>
+                                <td class="col-auto" rowspan="2">
+                                    <img src="<?=$hdd['hinhanh_url']?>" alt="" width="80px" height="100px">
+                                </td>
+                                <td class="col-auto">
+                                    <h6><?=$hh['ten']?></h6>
+                                    <p><?=$spc['soluong']?></p>
+                                </td>
+                                <td class="col-auto">
+                                    <?php echo $spc['soluong']*$hh['gia']?>
+                                </td>
+                            </tr>
+                        </table>
+                        <?php }} ?>
+                    </div><hr>           
                     <table class="table ">
                         <tbody class="table-group-divider">
                             <tr>
-                              <td>Phí vận chuyển</td>
-                              <td style="text-align: right;">10.000đ</td>
-                            </tr>
-                            <tr>
                               <td><h5>Tổng Tiền</h5></td>
-                              <td style="text-align: right;"><h4>1.000.000đ</h4></td>
+                              <td style="text-align: right;"><h4><?=$tongtien?></h4></td>
                             </tr>
                           </tbody>
                     </table>
                     <div class="row d-flex justify-content-center ">
-                        <button class="btn btn-outline-success hoantatDH" type="submit">Hoàn Tất Đơn Hàng</button>
+                        <?php if(isset($giohang)){ foreach ($giohang as $gh){
+                        extract($gh); ?> <input type="hidden" name="idsp_chon[]" value="<?=$id_spchon?>"> <?php }} ?>
+                        <button class="btn btn-outline-success " name="hoantatDH" type="submit">Hoàn Tất Đơn Hàng</button>
                     </div>
                 </div>
             </div>
-
+        </form>
        </div>
     </main>
+    <script>
+    function hienthi() {
+        var selectElement = document.getElementById('tinhtrangTT');
+        var divElement = document.getElementById('thanhtoanol');
+
+        if (selectElement.value === 'daTT') {
+            divElement.style.display = 'block';
+        } else {
+            divElement.style.display = 'none';
+        }
+    }
+    </script>

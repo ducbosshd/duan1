@@ -176,4 +176,8 @@
 
         return $td_gt_tt;
     }
+    function deleteGH($id_kh){
+        $sql = "DELETE FROM giohang WHERE id_khachhang = $id_kh";
+        pdo_execute($sql);
+    }
 ?>

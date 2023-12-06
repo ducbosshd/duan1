@@ -1,6 +1,6 @@
 <?php
 
-$_SESSION = [];
+
 
 if (empty($_POST['taikhoan']) || !filter_var($_POST['taikhoan'], FILTER_VALIDATE_EMAIL)) {
     $_SESSION['email'] = "Email không hợp lệ!";
@@ -18,6 +18,11 @@ if (empty($_POST['tenKH'])) {
     $_SESSION['tenKH'] = "Vui lòng nhập tên sinh viên!";
 }else{
     $tenKH = $_POST['tenKH'];
+}
+if (empty($_POST['diachi'])) {
+    $_SESSION['diachi'] = "Vui lòng nhập địa chỉ!";
+}else{
+    $diachi = $_POST['diachi'];
 }
 
 if (empty($_POST['sdtKH']) || !preg_match('/^0[2-9]\d{8}$/', $_POST['sdtKH'])) {
