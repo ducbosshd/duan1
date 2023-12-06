@@ -124,9 +124,36 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     if(!empty($_POST['kichco'])){
                         $kc = $_POST['kichco'];
                     }
-                    insert_giohang($idsp, $sl, $idkh,$ms,$kc);              
+                    insert_giohang($idsp, $sl, $idkh,$ms,$kc);
+                    header('location: trangchu.php?act=sanphamct&id='.$idsp);              
             }
-            header('location: trangchu.php?act=sanphamct&id='.$idsp);
+            if(isset($_POST['muangay'])){              
+                $idsp = $_POST['id'];
+                
+                    if(!empty($_POST['soluong'])){
+                        $sl = $_POST['soluong'];
+                    }
+                    if(!empty($_POST['mausac'])){
+                        $ms = $_POST['mausac'];
+                    }
+                    if(!empty($_POST['kichco'])){
+                        $kc = $_POST['kichco'];
+                    }
+                    if(!empty($_POST['gia'])){
+                        $giaSP = $_POST['gia'];
+                    }
+                    $tongtien = $giaSP*$sl;
+                    
+                    if(isset($_SESSION['taikhoan'])){
+                        $idkh = $_SESSION['taikhoan']['id'];
+                        insert_giohang($idsp, $sl, $idkh,$ms,$kc);
+                    }else{
+                        $idkh = '';
+                        $idspc = sanphamchon_MN($idsp, $sl, $ms, $kc);
+                    }
+                   
+                include 'view/thanhtoan.php';
+            }    
             break;
         case "giohang":
             if(isset($_SESSION['taikhoan'])){
