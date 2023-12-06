@@ -112,7 +112,6 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
         case "donhang":
             
             if(isset($_POST['themSP'])){
-                // if(is_array($_SESSION['taikhoan'])){
                     echo 'a';
                     $idsp = $_POST['id'];
                     $idkh = $_SESSION['taikhoan']['id'];
@@ -125,10 +124,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     if(!empty($_POST['kichco'])){
                         $kc = $_POST['kichco'];
                     }
-                    insert_giohang($idsp, $sl, $idkh,$ms,$kc);
-                // }else{
-                //     header('location: javascrtip:confrimDN()');
-                // }
+                    insert_giohang($idsp, $sl, $idkh,$ms,$kc);              
             }
             header('location: trangchu.php?act=sanphamct&id='.$idsp);
             break;
@@ -146,6 +142,57 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 xoa_giohang($_GET['id']);
             }
             header('location: trangchu.php?act=giohang');
+
+            break;
+        case "thanhtoan":
+            $idspc = $_POST['idspc']; 
+            $soluong = $_POST['soluong'];
+            $gia = $_POST['giaSP'];
+            $tongtien = 0;
+            $length = count($soluong);
+            for($i=0;$i<$length;$i++){
+                updateGH($idspc[$i],$soluong[$i]);
+                $tongtien += $soluong[$i] * $gia[$i];
+            }
+            if(isset($_SESSION['taikhoan'])){
+                $id_kh = $_SESSION['taikhoan']['id'];     
+            }
+            $giohang = load_giohang($id_kh);
+            include "view/thanhtoan.php";
+            break;
+        case "hoantatTH":
+            if(isset($_POST['hoantatDH'])){
+                include "model/validate.php";
+                if(!isset($_SESSION['tenKH']) && 
+                !isset($_SESSION['sdtKH']) && 
+                !isset($_SESSION['diachi'])){
+                    $idspc = $_POST['idsp_chon'];
+                    $length = count($idspc);
+
+                    
+                    if(!empty($_POST['ghichu'])){
+                    $ghichu = $_POST['ghichu'];
+                    }else{
+                        $ghichu = '';
+                    }
+                    $tinhtrang_TT = $_POST['tinhtrangTT'];
+                    if(isset($_SESSION['taikhoan'])){
+                        $id_kh = $_SESSION['taikhoan']['id'];
+                    }else{
+                        $id_kh = '';
+                    }
+                    hoantatDH($tenKH,$sdtKH,$diachi,$id_kh,$ghichu,$tinhtrang_TT);
+                    $id_DH = idDH();
+                    for($i=0;$i<$length;$i++){
+                        chitiet_DH($idspc[$i], $id_DH['id']);
+                    }
+                    if(isset($_SESSION['taikhoan'])){
+                        deleteGH($id_kh);
+                    }
+                    $thongbao = "Đặt hàng thành công";
+                    header('location:trangchu.php');
+                }
+            }
             break;
     }
 }else{   

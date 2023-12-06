@@ -1,6 +1,7 @@
 <main>
-       <div class="container py-5"><br>
+    <div class="container py-5"><br>
         <h3>Giỏ Hàng Của Bạn</h3><hr>
+        <form action="trangchu.php?act=thanhtoan" method="post">
             <div class="row m-4">
                 <div class="col-8 py-2">
                     <?php if(isset($giohang)){ foreach ($giohang as $gh){
@@ -15,14 +16,17 @@
                         <div class="col-6 gioHang_tenSP">
                             <h5 class="tenSP_GH"><?=$hh['ten']?></h5>
                             <div class="input-group">
-                                <input type="hidden" class="giasp" value="<?=$hh['gia']?>">
-                                <input type="number" class="form-control" name="soluong" min="1" value="<?=$spc['soluong']?>" onclick="tinhtien()">
-                                    <input type="hidden" name="idspc" value="<?=$id_spchon?>">
-                                    <a href="trangchu.php?act=xoaspc&id=<?=$id?>"><button class="XoaSPgiohang btn btn-outline-success" name="xoaSPC" type="submit">Xóa</button></a>
+                                <input type="hidden" name="giaSP[]" class="giasp" value="<?=$hh['gia'];?>">
+                                <input type="number" class="form-control" class="soluong" name="soluong[]" min="1" value="<?=$spc['soluong']?>" onclick="tinhtien()">
+                                <input type="hidden" name="idspc[]" value="<?=$id_spchon?>">
+                                <a href="trangchu.php?act=xoaspc&id=<?=$id?>"><button class="XoaSPgiohang btn btn-outline-success" name="xoaSPC" type="button">Xóa</button></a>
                             </div>
                         </div>
                         <div class="col-3 py-2 text-end">
-                            <div><h5 class="giaSP_GH"><?php echo $hh['gia']*$spc['soluong']?>đ</h5></div>
+                            <div>
+                                <h5 class="giaSP_GH"><?php echo $hh['gia']*$spc['soluong']?>đ</h5>
+                                
+                            </div>
                         </div>
                     </div><hr>
                     <?php }?>
@@ -42,20 +46,22 @@
                                         $hh= loadone_hh($spc['id_hanghoa']);
                                         $tongtien += $hh['gia']*$spc['soluong'];
                                   }     echo $tongtien?>đ</h4>
+                            
                                     </td>
                                 </tr>
                               </tbody>
                         </table>
                     </div>
                     <p>Bạn có thể nhập mã giảm giá ở trang thanh toán</p>
-                    <button class="tienhanhDH" type="submit">Tiến Hành Đặt Hàng</button>
+                    <button class="tienhanhDH" name="thanhtoan" type="submit">Tiến Hành Đặt Hàng</button>
                 </div><?php }else{?> <h4>Bạn chưa có sản phẩm nào</h4><?php }?>
             </div>
+        </form>
     </div>
     <script>
         function tinhtien(){
             var giatien = document.getElementsByClassName('giasp');
-            var soluong = document.getElementsByName('soluong');
+            var soluong = document.getElementsByName('soluong[]');
             var giaSP_GH = document.getElementsByClassName('giaSP_GH');
             var tt = document.getElementById('tongtien');
             var thanhtien;
@@ -71,8 +77,7 @@
                 giaSP_GH[i].innerText = thanhtien+'đ';              
             }
             tt.innerText = tongtien+'đ';
-
-        }
+    }
     </script>
     </main>
     
