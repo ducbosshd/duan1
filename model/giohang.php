@@ -36,6 +36,7 @@
             $sql = "INSERT INTO donhang (hoten_nn,sdt_nn,diachi_nn,ghichu_nn,tinhtrangthanhtoan) 
             VALUES ('$tenKH','$sdtKH','$diachi','$ghichu','$tinhtrang_TT')";
         }
+        var_dump($sql);
         pdo_execute($sql);
     }
     function idDH(){
@@ -47,5 +48,17 @@
         $sql = "INSERT INTO chitietdonhang (id_donhang,id_hanghoachon) VALUES ('$id_DH','$id_spc')";
         var_dump($sql);
         pdo_execute($sql);
+    }
+    function sanphamchon_MN($idsp, $sl, $ms, $kc){
+        $spc = "INSERT INTO sanphamchon(id_hanghoa, soluong) values ('$idsp','$sl')";
+        pdo_execute($spc);
+        $id = "SELECT * FROM sanphamchon order by id desc limit 0,1";
+        $spc = pdo_query_one($id);
+        $id_spc = $spc['id'];
+        $mausac = "INSERT INTO thuoctinh_sanphamchon(id_sanphamchon,id_giatrithuoctinh) values ('$id_spc','$ms')";
+        pdo_execute($mausac);
+        $kichco = "INSERT INTO thuoctinh_sanphamchon(id_sanphamchon,id_giatrithuoctinh) values ('$id_spc','$kc')";
+        pdo_execute($kichco);
+        return $id_spc;
     }
 ?>

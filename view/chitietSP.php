@@ -18,11 +18,12 @@
                         </div> 
                      </div>
                     <div class="col-4 select_chitietSP">
-                        <form action="<?php echo (isset($_SESSION['taikhoan']))?"trangchu.php?act=donhang":''?>" method="post">
+                        <form action="trangchu.php?act=donhang" method="post">
                         <div class="chitietSP_trangthai">
                             <h4><?=$ten?></h4>
                             <span class="trangthaiSP">Trạng thái của SP(còn hàng,hết hàng)</span><hr>
                             <h3>Giá Sản Phẩm: <?=$gia?>₫</h3><br>
+                            <input type="hidden" name="gia" value="<?=$gia?>">
                         </div>
                         <div class="select_mau">
                             <h5>Màu Sắc</h5>
@@ -49,10 +50,11 @@
                         <div class="row ">
                             <input type="hidden" name="id" value="<?=$id?>">
                             <div class="col-6 ">
-                                <a href="<?php echo (!isset($_SESSION['taikhoan']))?"javascript:confirmDN('trangchu.php?act=dangnhap')":''?>"><button name="themSP" type="<?php echo (!isset($_SESSION['taikhoan']))?'button':'submit'?>" class="themSP">Thêm Vào Giỏ Hàng</button></a>
+                                <a href="<?php echo (!isset($_SESSION['taikhoan']))?"javascript:confirmDN('trangchu.php?act=dangnhap')":''?>">
+                                <button name="themSP" type="<?php echo (!isset($_SESSION['taikhoan']))?'button':'submit'?>" class="themSP">Thêm Vào Giỏ Hàng</button></a>
                             </div>
                             <div class="col-6 d-flex justify-content-center">
-                                <button type="submit" class="muangay">Mua Ngay</button>
+                                <button type="submit" name="muangay" class="muangay">Mua Ngay</button>
                             </div>
                         </div></form><hr>
                         <div class="thongtinSP">
@@ -65,15 +67,7 @@
                <div class="binhluan py-5">
                     <h4>Bình Luận</h4><hr>
                     <div class="bangBL">
-                        <!-- <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">Người dùng</th>
-                                <th scope="col">Nội Dung</th>
-                                <th scope="col">Thời Gian</th>
-                              </tr>
-                            </thead>  -->
-                            <!-- <tbody class="table-group-divider"> -->
+                       
                                 <?php foreach($binhluan as $bl){
                                     extract($bl);
                                     $nd = loadone_tk($id_nguoidung);
@@ -83,8 +77,7 @@
                                         <span>'.$noidung.'</span><br>
                                         </div>    
                                         '; }?>
-                            <!-- </tbody>
-                          </table> -->
+                        
                     </div>
                     <?php if(isset($_SESSION['taikhoan'])){?>
                         <div class="formBL">
