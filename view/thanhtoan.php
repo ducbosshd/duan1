@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-4 ">
                     <div class="row SPthanhtoan">
-                        <?php if(isset($_SESSION['taikhoan'])){ 
+                        <?php if(isset($_SESSION['taikhoan']) && isset($giohang)){ 
                             foreach ($giohang as $gh){
                         extract($gh); 
                         $spc = load_spc($id_spchon);
@@ -71,11 +71,14 @@
                           </tbody>
                     </table>
                     <div class="row d-flex justify-content-center ">
-                        <?php if(isset($_SESSION['taikhoan'])){ foreach ($giohang as $gh){
-                        extract($gh); ?> <input type="hidden" name="idsp_chon[]" value="<?=$id_spchon?>"> <?php }}else{ ?>
+                        <?php if(isset($_SESSION['taikhoan']) && isset($giohang)){ 
+                            foreach ($giohang as $gh){
+                                extract($gh); ?> 
+                                <input type="hidden" name="idsp_chon[]" value="<?=$id_spchon?>">
+                        <?php }}else{ ?>
                             <input type="hidden" name="idsp_chon[]" value="<?=$idspc?>"> <?php }
                          ?>
-                        <button class="btn btn-outline-success " name="hoantatDH" type="submit">Hoàn Tất Đơn Hàng</button>
+                        <button class="btn btn-outline-success" name="hoantatDH" type="submit">Hoàn Tất Đơn Hàng</button>
                     </div>
                 </div>
             </div>

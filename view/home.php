@@ -1,12 +1,13 @@
    <!-- main -->
    <main>
-        <?php
-            if(isset($thongbao)){
-                echo $thongbao;
-            }
-         ?>
         <section class="main my-3 ">
            <div class="container">
+           <?php
+            if(isset($_SESSION['thanhcong'])){
+                echo '<h4 style="color: green">'.$_SESSION['thanhcong'].'</h4>';
+                unset($_SESSION['thanhcong']);
+            }
+         ?>
                 <div class="banner">
                     <!-- banner bootstrap -->
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
