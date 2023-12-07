@@ -109,8 +109,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             }
             include "view/login/quenmk.php";
             break;
-        case "donhang":
-            
+        case "donhang":           
             if(isset($_POST['themSP'])){
                     echo 'a';
                     $idsp = $_POST['id'];
@@ -128,8 +127,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     header('location: trangchu.php?act=sanphamct&id='.$idsp);              
             }
             if(isset($_POST['muangay'])){              
-                $idsp = $_POST['id'];
-                
+                $idsp = $_POST['id'];               
                     if(!empty($_POST['soluong'])){
                         $sl = $_POST['soluong'];
                     }
@@ -144,7 +142,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     }
                     $tongtien = $giaSP*$sl;
                     
-                    if(isset($_SESSION['taikhoan'])){
+                    if(isset($_SESSION['taikhoan']) && isset($giohang)){
                         $idkh = $_SESSION['taikhoan']['id'];
                         insert_giohang($idsp, $sl, $idkh,$ms,$kc);
                     }else{
@@ -168,7 +166,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             if(isset($_GET['id'])){
                 xoa_giohang($_GET['id']);
             }
-            header('location: trangchu.php?act=giohang');
+            header('location: trangchu.php?act=giohang'); 
 
             break;
         case "thanhtoan":
@@ -195,8 +193,6 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 !isset($_SESSION['diachi'])){
                     $idspc = $_POST['idsp_chon'];
                     $length = count($idspc);
-
-                    
                     if(!empty($_POST['ghichu'])){
                     $ghichu = $_POST['ghichu'];
                     }else{
@@ -216,13 +212,14 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     if(isset($_SESSION['taikhoan'])){
                         deleteGH($id_kh);
                     }
-                    $thongbao = "Đặt hàng thành công";
+                    $_SESSION['thanhcong'] = 'Bạn đã đặt hàng thành công';
                     header('location:trangchu.php');
                 }
             }
+            // header('location:trangchu.php');
             break;
     }
-}else{   
+}else{  
     $dshh = loadtop8_hh();
     include "view/home.php";
 }
