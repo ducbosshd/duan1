@@ -45,7 +45,7 @@
                             <a class="nav-link" href="index.php?act=dstk">QL Tài Khoản</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="ql_donhang.html">QL Đơn Hàng</a>
+                            <a class="nav-link" href="index.php?act=qldonhang">QL Đơn Hàng</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="thungrac.html">Thùng Rác</a>

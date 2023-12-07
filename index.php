@@ -5,6 +5,7 @@
     include 'model/hanghoa.php';
     include 'model/binhluan.php';
     include 'model/taikhoan.php';
+    include 'model/giohang.php';
     include 'admin/header.php';
     if(isset($_GET['act'])){
         $act = $_GET['act'];
@@ -256,6 +257,24 @@
                     hacap_tk($id);
                 }
                 header('location: index.php?act=dstk');
+                break;
+            case 'qldonhang':
+                $dsdh = danhsachdonhang();
+                include 'admin/donhang/danhsach.php';
+                break;
+            case 'update_ttdh':
+                if(isset($_POST['next'])){
+                    $id = $_POST['id'];
+                    trangthaidonhang($id);
+                }
+                if(isset($_POST['thatbai'])){
+                    $id = $_POST['id'];
+                    donhangthatbai($id);
+                }
+                header('location: index.php?act=qldonhang');
+                break;
+            case 'chitiet_DH':
+                include 'admin/donhang/chitietdonhang.php';
                 break;
             default:
                 # code...
