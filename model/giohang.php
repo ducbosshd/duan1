@@ -30,8 +30,9 @@
         pdo_execute($sql);
     }
     function hoantatDH($tenKH,$sdtKH,$diachi,$id_KH,$ghichu,$tinhtrang_TT){
-       if($id_KH != ''){ $sql = "INSERT INTO donhang (id_nguoidung,hoten_nn,sdt_nn,diachi_nn,ghichu_nn,tinhtrangthanhtoan) 
-                                VALUES ('$id_KH','$tenKH','$sdtKH','$diachi','$ghichu','$tinhtrang_TT')";
+       if($id_KH != ''){ 
+            $sql = "INSERT INTO donhang (id_nguoidung,hoten_nn,sdt_nn,diachi_nn,ghichu_nn,tinhtrangthanhtoan) 
+                    VALUES ('$id_KH','$tenKH','$sdtKH','$diachi','$ghichu','$tinhtrang_TT')";
         }else{
             $sql = "INSERT INTO donhang (hoten_nn,sdt_nn,diachi_nn,ghichu_nn,tinhtrangthanhtoan) 
             VALUES ('$tenKH','$sdtKH','$diachi','$ghichu','$tinhtrang_TT')";
@@ -60,5 +61,22 @@
         $kichco = "INSERT INTO thuoctinh_sanphamchon(id_sanphamchon,id_giatrithuoctinh) values ('$id_spc','$kc')";
         pdo_execute($kichco);
         return $id_spc;
+    }
+
+    function danhsachdonhang(){
+        $sql = "SELECT * FROM donhang where 1";
+        $dsdh = pdo_query($sql);
+        return $dsdh;
+    }
+
+    function trangthaidonhang($id){
+        $sql = "update donhang set tinhtrangdonhang = tinhtrangdonhang + 1 where id=".$id;
+        var_dump($sql);
+        pdo_execute($sql);
+    }
+
+    function donhangthatbai($id){
+        $sql = "update donhang set tinhtrangdonhang = 3 where id=".$id;
+        pdo_execute($sql);
     }
 ?>
